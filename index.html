@@ -28,35 +28,35 @@
 
     <div class="db mt3 flex align-center">
       <label for="time-between" class="w-50 lh-copy">
-        Delay (in seconds) between opening each URL:
+        Delay (in milliseconds) between opening each URL:
       </label>
 
       <input
         class="ph2 lh-copy tc v-mid mid-gray"
         id="time-between"
         type="number"
-        value="6"
-        step="1"
+        value="500"
+        step="100"
         min="0"
-        max="20"
-        placeholder="6"
+        max="20000"
+        placeholder="500"
       >
     </div>
 
     <div class="db mt3 flex align-center">
       <label for="time-close" class="w-50 lh-copy">
-        Delay (in seconds) before closing each tab:
+        Delay (in milliseconds) before closing each tab:
       </label>
 
       <input
         class="ph2 lh-copy tc v-mid mid-gray"
         id="time-close"
         type="number"
-        value="6"
-        step="1"
+        value="500"
+        step="100"
         min="0"
-        max="20"
-        placeholder="6"
+        max="20000"
+        placeholder="500"
       >
     </div>
 
@@ -114,7 +114,7 @@
 
         setTimeout(function () {
           tabs[urls.length - 1].close();
-        }, timeBeforeClose * 1000);
+        }, timeBeforeClose);
       }
 
       (function processURL (i) {
@@ -130,7 +130,7 @@
 
             setTimeout(function () {
               tabs[i].close();
-            }, timeBeforeClose * 1000);
+            }, timeBeforeClose);
           }
 
           if (i > 0) {
@@ -138,7 +138,7 @@
           } else {
             statusAlert.innerHTML = 'Finished opening ' + urls.length + ' URLs.';
           }
-        }, timeBetween * 1000);
+        }, timeBetween);
       })(urls.length - 1);
     }
   </script>
