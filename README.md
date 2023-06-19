@@ -1,4 +1,4 @@
-https://dasyuan.github.io/multiple-url-opener/
+https://enameled.github.io/multiple-url-opener/
 
 
 # Multiple URL Opener
